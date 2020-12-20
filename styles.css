@@ -1,0 +1,10 @@
+#calculator-body{
+    background-color: dimgrey;
+    height: 600px;
+    width: 400px;
+}
+
+#calculator-display{
+    background-color: bisque;
+    margin: 10px;
+}
