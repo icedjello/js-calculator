@@ -2,9 +2,22 @@
     background-color: dimgrey;
     height: 600px;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
 #calculator-display{
+    flex: 1;
     background-color: bisque;
-    margin: 10px;
+}
+
+#buttons-panel{
+    flex:1;
+    background-color: grey;
+}
+
+#operator-buttons{
+    flex-direction: column;
 }

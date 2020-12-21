@@ -1,3 +1,9 @@
+function main(){
+
+}
+
+
+
 const STACK_DISPLAY = document.getElementById('stack-display');
 const NUMBER_DISPLAY = document.getElementById('number-display');
 
@@ -93,10 +99,16 @@ function onKeyEvent(e){
 let runningTotal = 0;
 let lastOperator = '+';
 let stack = [];
+let showingAnswer = true;
 
 
 function onNumberInput(number) {
-    let leadingZero = parseInt(NUMBER_DISPLAY.innerHTML) === 0;
+    let displayedNumber = parseInt(NUMBER_DISPLAY.innerHTML)
+    let leadingZero = displayedNumber === 0;
+    if (showingAnswer){
+        showingAnswer = false;
+        NUMBER_DISPLAY.innerHTML = '';
+    }
     if (leadingZero) {
         NUMBER_DISPLAY.innerHTML = '';
     }
@@ -109,6 +121,7 @@ function clearNumberDisplay() {
 
 function showTotal() {
     NUMBER_DISPLAY.innerHTML = runningTotal;
+    showingAnswer = true;
 }
 
 function clearStack() {
@@ -116,7 +129,7 @@ function clearStack() {
 }
 
 function showStack() {
-    STACK_DISPLAY.innerHTML = stack[stack.length - 1].toString().replaceAll(',', ' ');
+    STACK_DISPLAY.innerHTML = stack.toString().replaceAll(',', ' ');
 }
 
 function pushToStack(toPush) {
@@ -144,7 +157,8 @@ function onOperatorInput(latestOperator) {
         clearNumberDisplay();
         doSum(currentInput);
         lastOperator = latestOperator;
-        pushToStack([runningTotal, latestOperator]);
+        pushToStack([currentInput, latestOperator]);
         showStack();
+        showTotal();
     }
 }
