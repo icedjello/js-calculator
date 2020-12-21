@@ -1,17 +1,20 @@
+const STACK_DISPLAY = document.getElementById('stack-display');
+
 const NUMBER_DISPLAY = document.getElementById('number-display');
-const OPERATOR_DISPLAY = document.getElementById('operator-display');
+
 
 const PLUS_BUTTON = document.getElementById('plusButton');
 const MINUS_BUTTON = document.getElementById('minusButton');
 const MULTIPLY_BUTTON = document.getElementById('multiplyButton');
 const DIVIDE_BUTTON = document.getElementById('divideButton');
+const EQUALS_BUTTON = document.getElementById('equalsButton');
+
 
 PLUS_BUTTON.addEventListener('click', () => onOperatorInput('+'));
 MINUS_BUTTON.addEventListener('click', () => onOperatorInput('-'));
 MULTIPLY_BUTTON.addEventListener('click', () => onOperatorInput('*'));
 DIVIDE_BUTTON.addEventListener('click', () => onOperatorInput('/'));
-
-const EQUALS_BUTTON = document.getElementById('equalsButton');
+EQUALS_BUTTON.addEventListener('click', ()=> onOperatorInput('='));
 
 const ONE_BUTTON = document.getElementById('oneButton');
 const TWO_BUTTON = document.getElementById('twoButton');
@@ -55,6 +58,18 @@ function showTotal() {
     NUMBER_DISPLAY.innerHTML = runningTotal;
 }
 
+function clearStack(){
+    STACK_DISPLAY.innerHTML = '';
+}
+
+function showStack(){
+    STACK_DISPLAY.innerHTML = stack[stack.length - 1].toString().replaceAll(',', ' ');
+}
+
+function pushToStack(toPush){
+    stack.push(toPush)
+}
+
 function doSum(inputNumber) {
     let sumString = `${runningTotal}${lastOperator}${inputNumber}`;
     runningTotal = eval(sumString);
@@ -62,14 +77,21 @@ function doSum(inputNumber) {
 
 function onOperatorInput(latestOperator) {
     let currentInput = parseInt(NUMBER_DISPLAY.innerHTML);
-    let currentOperator = OPERATOR_DISPLAY.innerHTML;
     let noInput = isNaN(currentInput);
+    let isEquals = latestOperator === '=';
 
     if (noInput) {
         console.warn('No input!');
-    } else {
+    }else if(isEquals){
         doSum(currentInput);
-        lastOperator = currentOperator;
         showTotal();
+        clearStack();
+        lastOperator = latestOperator;
+    } else {
+        clearNumberDisplay();
+        doSum(currentInput);
+        lastOperator = latestOperator;
+        pushToStack([runningTotal, latestOperator]);
+        showStack();
     }
 }
