@@ -1,5 +1,4 @@
 const STACK_DISPLAY = document.getElementById('stack-display');
-
 const NUMBER_DISPLAY = document.getElementById('number-display');
 
 
@@ -14,7 +13,7 @@ PLUS_BUTTON.addEventListener('click', () => onOperatorInput('+'));
 MINUS_BUTTON.addEventListener('click', () => onOperatorInput('-'));
 MULTIPLY_BUTTON.addEventListener('click', () => onOperatorInput('*'));
 DIVIDE_BUTTON.addEventListener('click', () => onOperatorInput('/'));
-EQUALS_BUTTON.addEventListener('click', ()=> onOperatorInput('='));
+EQUALS_BUTTON.addEventListener('click', () => onOperatorInput('='));
 
 const ONE_BUTTON = document.getElementById('oneButton');
 const TWO_BUTTON = document.getElementById('twoButton');
@@ -38,9 +37,63 @@ EIGHT_BUTTON.addEventListener('click', () => onNumberInput(8));
 NINE_BUTTON.addEventListener('click', () => onNumberInput(9));
 ZERO_BUTTON.addEventListener('click', () => onNumberInput(0));
 
+document.addEventListener('keydown', onKeyEvent);
+
+function onKeyEvent(e){
+    switch (e.key){
+        case '1':
+            onNumberInput(1);
+            break;
+        case '2':
+            onNumberInput(2);
+            break;
+        case '3':
+            onNumberInput(3);
+            break;
+        case '4':
+            onNumberInput(4);
+            break;
+        case '5':
+            onNumberInput(5);
+            break;
+        case '6':
+            onNumberInput(6);
+            break;
+        case '7':
+            onNumberInput(7);
+            break;
+        case '8':
+            onNumberInput(8);
+            break;
+        case '9':
+            onNumberInput(9);
+            break;
+        case '0':
+            onNumberInput(0);
+            break;
+        case '+':
+            onOperatorInput('+');
+            break;
+        case '-':
+            onOperatorInput('-');
+            break;
+        case '*':
+            onOperatorInput('*');
+            break;
+        case '/':
+            onOperatorInput('/');
+            break;
+        case '=':
+            onOperatorInput('=');
+            break;
+    }
+}
+
+
 let runningTotal = 0;
 let lastOperator = '+';
 let stack = [];
+
 
 function onNumberInput(number) {
     let leadingZero = parseInt(NUMBER_DISPLAY.innerHTML) === 0;
@@ -58,15 +111,15 @@ function showTotal() {
     NUMBER_DISPLAY.innerHTML = runningTotal;
 }
 
-function clearStack(){
+function clearStack() {
     STACK_DISPLAY.innerHTML = '';
 }
 
-function showStack(){
+function showStack() {
     STACK_DISPLAY.innerHTML = stack[stack.length - 1].toString().replaceAll(',', ' ');
 }
 
-function pushToStack(toPush){
+function pushToStack(toPush) {
     stack.push(toPush)
 }
 
@@ -82,7 +135,7 @@ function onOperatorInput(latestOperator) {
 
     if (noInput) {
         console.warn('No input!');
-    }else if(isEquals){
+    } else if (isEquals) {
         doSum(currentInput);
         showTotal();
         clearStack();
