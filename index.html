@@ -12,8 +12,8 @@
 <body>
 <div id="calculator-body">
     <div id="calculator-display">
-            <h3 id="stack-display">...</h3>
-            <h3 id="number-display">0</h3>
+            <h3 id="summary-display"></h3>
+            <h3 id="number-display"></h3>
     </div>
     <div id="buttons-panel">
         <div id="operator-buttons">
@@ -23,28 +23,30 @@
             <button id="divideButton">/</button>
         </div>
         <div class="number-buttons">
-            <button id="oneButton">1</button>
-            <button id="twoButton">2</button>
-            <button id="threeButton">3</button>
+            <button id="_1_Button">1</button>
+            <button id="_2_Button">2</button>
+            <button id="_3_Button">3</button>
         </div>
         <div class="number-buttons">
-            <button id="fourButton">4</button>
-            <button id="fiveButton">5</button>
-            <button id="sixButton">6</button>
+            <button id="_4_Button">4</button>
+            <button id="_5_Button">5</button>
+            <button id="_6_Button">6</button>
         </div>
         <div class="number-buttons">
-            <button id="sevenButton">7</button>
-            <button id="eightButton">8</button>
-            <button id="nineButton">9</button>
+            <button id="_7_Button">7</button>
+            <button id="_8_Button">8</button>
+            <button id="_9_Button">9</button>
         </div>
         <div class="bottom-row-buttons">
-            <button id="zeroButton">0</button>
+            <button id="_0_Button">0</button>
             <button id="equalsButton">=</button>
         </div>
     </div>
 </div>
 
-
+<script src="calc-state.js"></script>
+<script src="calc-renderer.js"></script>
+<script src="calc-cont.js"></script>
 <script src="./main.js"></script>
 </body>
 </html>

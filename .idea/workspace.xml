@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c9e4ae25-592d-486e-ad2e-5b0c9ec9aeb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/calc-cont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calc-renderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calc-state.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,7 +46,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -55,6 +66,9 @@
       <workItem from="1608284526671" duration="4324000" />
       <workItem from="1608290776701" duration="10443000" />
       <workItem from="1608477409001" duration="14977000" />
+      <workItem from="1608586756266" duration="16354000" />
+      <workItem from="1608650762296" duration="16000" />
+      <workItem from="1608650779676" duration="2009000" />
     </task>
     <task id="LOCAL-00001" summary="First commit.">
       <created>1608484914264</created>
@@ -105,5 +119,9 @@
     <MESSAGE value="Finished calculator functionality. Stack working as expected." />
     <MESSAGE value="Keybinds working." />
     <option name="LAST_COMMIT_MESSAGE" value="Keybinds working." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
